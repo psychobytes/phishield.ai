@@ -1,109 +1,100 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>phishield.ai</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <style>
-        html, body {
-            font-family: 'Courier New', Courier, monospace;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            color: #393E46;
-            overflow: hidden; /* Prevent scrollbars */
-        }
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1; /* Ensure particles are in the background */
-        }
-        .search-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            max-width: 600px; /* Limit the width for larger screens */
-            text-align: center;
-            padding: 0 20px; /* Padding to avoid touching screen edges on mobile */
-        }
-        .search-container input[type="text"] {
-            width: 80%; /* Responsive width */
-            padding: 10px;
-            font-size: 1.2em;
-            color: #393E46;
-        }
-        .search-container button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            color: #EEEEEE;
-            background-color: #393E46;
-            border: none;
-        }
-        .btn-primary {
-            color: #393E46;
-            background-color: #393E46;
-            border-color: #929AAB;
-        }
-        .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-            color: #393E46;
-            background-color: #929AAB;
-            border-color: #EEEEEE;
-        }
-        .form-control {
-            color: #393E46;
-            background-color: #EEEEEE;
-        }
-        .form-control:focus {
-            color: #393E46;
-            border-color: #646464;
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #57575799;
-        }
-        footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%; /* Full width */
-            background-color: #929AAB;
-            color: #393E46;
-            text-align: center;
-            padding: 10px 0;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar fixed-top" style="background-color:#929AAB;">
-        <a class="navbar-brand px-5" style="color:#393E46;" href="#">
-            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/chain-13-103941.png?f=webp&w=256" width="30" height="30" class="d-inline-block align-top" alt="Logo">
-        </a>
-        <div class="px-5">
-            <a class="btn btn-floating m-1" style="color:#393E46;" href="/">Docs</a>
-            <a class="btn btn-floating m-1" style="color:#393E46;" href="/admin">API</a>
-            <a class="btn btn-floating m-1" style="color:#393E46;" href="/about">About</a> <!-- Added About link -->
+    <head>
+        <title>PhishieldAI</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <style>
+            html, body {
+                font-family:'Courier New', Courier, monospace;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                color:#393E46;
+                overflow: hidden; /* Prevent scrollbars */
+            }
+            #particles-js {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: -1; /* Ensure particles are in the background */
+            }
+            .search-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                max-width: 600px;
+                text-align: center;
+            }
+            .search-container input[type="text"] {
+                width: 80%;
+                padding: 10px;
+                font-size: 1.2em;
+                color:#393E46;
+            }
+            .search-container button {
+                padding: 10px 20px;
+                font-size: 1.2em;
+                color:#EEEEEE;
+                background-color: #393E46;
+            }
+            .btn-primary {
+                color:#393E46;
+                background-color:#393E46;
+                border-color:#929AAB; /*set the color you want here*/
+            }
+            .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+                color:#393E46;
+                background-color:#929AAB;
+                border-color:#EEEEEE; /*set the color you want here*/
+            }
+            .form-control {
+                color:#393E46;
+                background-color:#EEEEEE;
+            }
+            .form-control:focus {
+                color:#393E46;
+                border-color: #646464;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #57575799;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar fixed-top" style="background-color:#929AAB;">
+            <a class="navbar-brand px-5" href="/" style="color:#393E46;">
+                <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/chain-13-103941.png?f=webp&w=256" width="30" height="30" class="d-inline-block align-top">
+            </a>
+            <div class="px-5">
+                <a class="btn btn-floating m-1" href="https://github.com/psychobytes/phishield.ai">Docs</a>
+                <a class="btn btn-floating m-1" href="https://phishield-api.abdulhaxor.my.id/docs">API</a>
+                <a class="btn btn-floating m-1" href="/about">About</a>
+            </div>
+        </nav>
+        <div id="particles-js"></div>
+        <div class="search-container">
+            <h1><b>PHISHIELD.AI</b></h1>
+            <p>AI-Powered Defense against Phishing</p>
+            <form class="d-flex" action="/input" method="POST">
+                <input class="form-control me-2" type="text" name="url-input" placeholder="Enter URL Here" pattern="https?:\/\/[^\s]+" required oninvalid="this.setCustomValidity('Invalid URL. Please enter a valid URL.')" oninput="this.setCustomValidity('')">
+                <button class="btn btn-primary">Search</button>
+            </form>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <script>
+                        alert("{{ messages[0] }}");
+                    </script>
+                {% endif %}
+            {% endwith %}
         </div>
-    </nav>
-    <div id="particles-js"></div>
-    <div class="search-container">
-        <h1><b>PHISHIELD.AI</b></h1>
-        <p>Check phishing URL using AI</p>
-        <form class="d-flex" action="/input" method="POST"> <!-- Responsive form layout -->
-            <input class="form-control me-2" type="text" name="url-input" placeholder="Enter URL Here">
-            <button class="btn btn-primary" type="submit">Search</button>
-        </form>
-    </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 phishield.ai | <a style="color: #393E46;">Privacy Policy</a> | <a style="color: #393E46;">Terms of Service</a></p>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS.load('particles-js', 'particlesjs-config.json', function() {
-            console.log('callback - particles.js config loaded');
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <script>
+            particlesJS.load('particles-js', "{{url_for('static', filename='particlesjs-config.json')}}", function() {
+                console.log('callback - particles.js config loaded');
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
 </html>
